@@ -1,5 +1,7 @@
 import React from "react";
 
+import { useHistory } from "react-router-dom";
+
 // styles
 import {
     Container,
@@ -27,6 +29,8 @@ import StarIcon from "../../../assets/star.svg";
 interface Props {}
 
 const UserIndex: React.FC<Props> = (props) => {
+    const history = useHistory();
+
     return (
         <Container>
             <WrapperBox>
@@ -41,7 +45,7 @@ const UserIndex: React.FC<Props> = (props) => {
                     <UserContent>
                         <Avatar />
                         <Labels>
-                            <Name> rookii/paicehusk </Name>
+                            <Name onClick={() => history.push("/users/1")}> rookii/paicehusk </Name>
                             <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
                             <Info>
                                 <Stars>

@@ -86,7 +86,7 @@ export const Labels = styled.div`
     margin-left: 15px;
 `;
 export const Name = styled.div`
-    color: var(--text-link);
+    color: var(--text-info);
     font-size: 20px;
     cursor: pointer;
 `;
@@ -144,7 +144,7 @@ export const IconLanguage = styled.div`
     width: 10px;
     height: 10px;
 
-    background-color: var(--text-language);
+    background-color: var(--text-danger);
 
     border-radius: 50%;
     margin-right: 5px;

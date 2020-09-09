@@ -40,9 +40,9 @@ export default createGlobalStyle`
 
     --text-primary: #fff;
     --text-secondary: #8a8c90;
-    --text-link: #5d80d6;
-    --text-star: #f9a839;
-    --text-language: #f84a4b; 
+    --text-info: #5d80d6;
+    --text-warning: #f9a839;
+    --text-danger: #f84a4b; 
   }
 `;
 
