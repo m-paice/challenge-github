@@ -2,13 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-
-    background-color: var(--primary);
-`;
-
-export const WrapperContainer = styled.div`
-    width: 100%;
-    height: 100vh;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -18,6 +12,7 @@ export const WrapperContainer = styled.div`
     @media (max-width: 576px) {
         padding: 10px;
         overflow-y: auto;
+        justify-content: unset;
     }
 `;
 

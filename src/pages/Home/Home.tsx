@@ -3,7 +3,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 // styles
-import { Container, WrapperContainer, Title, WrapperBox, Box } from "./styles";
+import { Container, Title, WrapperBox, Box } from "./styles";
 
 interface Props {}
 
@@ -12,14 +12,12 @@ const Home: React.FC<Props> = (props) => {
 
     return (
         <Container>
-            <WrapperContainer>
-                <Title> Welcome, get user and repo from github </Title>
+            <Title> Welcome, get user and repo from github </Title>
 
-                <WrapperBox>
-                    <Box onClick={() => history.push("/users")}> Go to user </Box>
-                    <Box onClick={() => history.push("/repos")}> Go to repo </Box>
-                </WrapperBox>
-            </WrapperContainer>
+            <WrapperBox>
+                <Box onClick={() => history.push("/users")}> Go to user </Box>
+                <Box onClick={() => history.push("/repos")}> Go to repo </Box>
+            </WrapperBox>
         </Container>
     );
 };

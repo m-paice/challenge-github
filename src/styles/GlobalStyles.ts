@@ -9,6 +9,21 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
+
+    background-color: var(--primary);
+    color: var(--text-primary);
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--secondary);
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: var(--primary);
+    }
   }
 
   *, button, input {
@@ -25,6 +40,9 @@ export default createGlobalStyle`
 
     --text-primary: #fff;
     --text-secondary: #8a8c90;
+    --text-link: #5d80d6;
+    --text-star: #f9a839;
+    --text-language: #f84a4b; 
   }
 `;
 
