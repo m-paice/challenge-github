@@ -3,28 +3,10 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 // styles
-import {
-    Container,
-    WrapperBox,
-    Box,
-    Input,
-    UserContent,
-    Avatar,
-    Labels,
-    Name,
-    Description,
-    Info,
-    InfoMobile,
-    WrapperActions,
-    Stars,
-    Language,
-    IconLanguage,
-    LastUpdated,
-} from "./style";
+import { Container, WrapperBox, Box, Input, WrapperUsers, User, Avatar, Info, Title, Description } from "./style";
 
 // assets
 import SearchIcon from "../../../assets/search.svg";
-import StarIcon from "../../../assets/star.svg";
 
 interface Props {}
 
@@ -40,291 +22,177 @@ const UserIndex: React.FC<Props> = (props) => {
                 </Box>
             </WrapperBox>
 
-            <WrapperBox>
-                <Box className="column">
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name onClick={() => history.push("/users/1")}> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
+            <WrapperUsers>
+                <User>
+                    <Avatar></Avatar>
 
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
 
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                <User>
+                    <Avatar></Avatar>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                <User>
+                    <Avatar></Avatar>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                <User>
+                    <Avatar></Avatar>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
 
-                    <UserContent>
-                        <Avatar />
-                        <Labels>
-                            <Name> rookii/paicehusk </Name>
-                            <Description> Golang implementation of the Paice/Husk Stemming Algorithm </Description>
-                            <Info>
-                                <Stars>
-                                    <img src={StarIcon} alt="start-icon" /> 26
-                                </Stars>
-                                <Language>
-                                    <IconLanguage /> Go
-                                </Language>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </Info>
-                            <InfoMobile>
-                                <WrapperActions>
-                                    <Stars>
-                                        <img src={StarIcon} alt="start-icon" /> 26
-                                    </Stars>
-                                    <Language>
-                                        <IconLanguage /> Go
-                                    </Language>
-                                </WrapperActions>
-                                <LastUpdated>Updated on 16 Dec 2013</LastUpdated>
-                            </InfoMobile>
-                        </Labels>
-                    </UserContent>
-                </Box>
-            </WrapperBox>
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
+
+                <User>
+                    <Avatar></Avatar>
+
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
+
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
+
+                <User>
+                    <Avatar></Avatar>
+
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
+
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
+
+                <User>
+                    <Avatar></Avatar>
+
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
+
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
+
+                <User>
+                    <Avatar></Avatar>
+
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
+
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
+
+                <User>
+                    <Avatar></Avatar>
+
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
+
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
+
+                <User>
+                    <Avatar></Avatar>
+
+                    <Info>
+                        <Title>
+                            <h1 onClick={() => history.push("/users/1")}> Matheus Paice </h1>
+                            <span> #Paice </span>
+                        </Title>
+                        <Description>
+                            I develop for @apple things Admin for @google Summer of Code @wwdc 2017 Scholarship Winner
+                        </Description>
+
+                        <span> Brasil / Bauru-SP </span>
+                        <span> matheus.paice@gmail.com </span>
+                    </Info>
+                </User>
+            </WrapperUsers>
         </Container>
     );
 };

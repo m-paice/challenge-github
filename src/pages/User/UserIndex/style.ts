@@ -4,7 +4,11 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
 
-    padding: 50px 10px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const WrapperBox = styled.div`
@@ -14,9 +18,7 @@ export const WrapperBox = styled.div`
     align-items: center;
     justify-content: center;
 
-    :last-child {
-        margin-top: 40px;
-    }
+    margin-top: 40px;
 `;
 
 export const Box = styled.div`
@@ -32,10 +34,6 @@ export const Box = styled.div`
     border-radius: 14px;
 
     background-color: var(--secondary);
-
-    &.column {
-        flex-direction: column;
-    }
 `;
 
 export const Input = styled.input`
@@ -50,8 +48,21 @@ export const Input = styled.input`
     color: var(--text-secondary);
 `;
 
-export const UserContent = styled.div`
+export const WrapperUsers = styled.div`
     width: 100%;
+    max-width: 900px;
+
+    margin: 40px 0;
+    padding: 10px;
+
+    border-radius: 7px;
+
+    background-color: var(--secondary);
+`;
+
+export const User = styled.div`
+    width: 100%;
+    max-width: 900px;
 
     display: flex;
 
@@ -60,7 +71,35 @@ export const UserContent = styled.div`
     border: 3px solid var(--primary);
     border-radius: 7px;
 
-    margin: 14px 0px;
+    background-color: var(--secondary);
+
+    margin-bottom: 25px;
+
+    :last-child {
+        margin-bottom: 0;
+    }
+
+    > div > div > h1 {
+        color: var(--text-info);
+        cursor: pointer;
+
+        transition: 0.2s;
+    }
+
+    > div > div > h1:hover {
+        text-decoration: underline;
+    }
+
+    > div > div > span {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    > div > span {
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
 
     @media (max-width: 576px) {
         flex-direction: column;
@@ -69,84 +108,43 @@ export const UserContent = styled.div`
 `;
 
 export const Avatar = styled.div`
-    width: 60px;
-    height: 60px;
-
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 
     flex-shrink: 0;
+
+    border-radius: 50%;
 
     background-color: var(--primary);
 
     @media (max-width: 576px) {
+        width: 70px;
+        height: 70px;
+
         margin-bottom: 20px;
     }
 `;
-export const Labels = styled.div`
-    margin-left: 15px;
-`;
-export const Name = styled.div`
-    color: var(--text-info);
-    font-size: 20px;
-    cursor: pointer;
-`;
-export const Description = styled.div`
-    color: var(--text-primary);
-    font-size: 16px;
-
-    margin: 7px 0;
-`;
 export const Info = styled.div`
-    display: flex;
-
-    @media (max-width: 576px) {
-        display: none;
-    }
+    margin-left: 7px;
 `;
 
-export const InfoMobile = styled.div`
-    display: none;
-
-    @media (max-width: 576px) {
-        display: flex;
-        flex-direction: column;
-    }
-`;
-
-export const WrapperActions = styled.div`
-    display: flex;
-
-    margin: 7px 0;
-`;
-
-export const Stars = styled.div`
+export const Title = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
 
-    > img {
-        margin-right: 5px;
+    span > {
+        margin-left: 70px;
+        color: var(--text-warning);
+    }
+
+    h1 > {
+        font-size: 20px;
+        color: var(--text-info);
+
+        cursor: pointer;
     }
 `;
 
-export const Language = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 15px;
-
-    @media (max-width: 576px) {
-        margin: 0 0 0 15px;
-    }
+export const Description = styled.div`
+    margin: 20px 0;
 `;
-
-export const IconLanguage = styled.div`
-    width: 10px;
-    height: 10px;
-
-    background-color: var(--text-danger);
-
-    border-radius: 50%;
-    margin-right: 5px;
-`;
-export const LastUpdated = styled.div``;
