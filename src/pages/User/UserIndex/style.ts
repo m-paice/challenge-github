@@ -79,69 +79,38 @@ export const User = styled.div`
         margin-bottom: 0;
     }
 
-    > div > div > h1 {
-        color: var(--text-info);
-        cursor: pointer;
-
-        transition: 0.2s;
-    }
-
-    > div > div > h1:hover {
-        text-decoration: underline;
-    }
-
-    > div > div > span {
-        color: var(--text-secondary);
-        font-size: 14px;
-        margin-left: 10px;
-    }
-
-    > div > span {
-        color: var(--text-secondary);
-        font-size: 14px;
-    }
-
     @media (max-width: 576px) {
         flex-direction: column;
         align-items: center;
     }
 `;
 
-export const Avatar = styled.div`
-    width: 50px;
-    height: 50px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background-color: var(--primary);
-
-    @media (max-width: 576px) {
-        width: 70px;
-        height: 70px;
-
-        margin-bottom: 20px;
-    }
-`;
 export const Info = styled.div`
     margin-left: 7px;
+
+    div > span {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin-left: 10px;
+
+        text-decoration: none;
+    }
+
+    span {
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
 `;
 
 export const Title = styled.div`
-    display: flex;
-    align-items: center;
+    color: var(--text-info);
 
-    span > {
-        margin-left: 70px;
-        color: var(--text-warning);
-    }
+    font-size: 20px;
 
-    h1 > {
-        font-size: 20px;
-        color: var(--text-info);
+    cursor: pointer;
 
-        cursor: pointer;
+    :hover {
+        text-decoration: underline;
     }
 `;
 

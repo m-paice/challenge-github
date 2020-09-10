@@ -38,17 +38,6 @@ export const BackButton = styled.button`
     }
 `;
 
-export const Avatar = styled.div`
-    width: 200px;
-    height: 200px;
-
-    flex-shrink: 0;
-
-    background-color: var(--secondary);
-
-    border-radius: 50%;
-`;
-
 export const WrapperActions = styled.div`
     display: flex;
 
@@ -63,37 +52,12 @@ export const Actions = styled.div`
 
 export const EmailText = styled.div``;
 
-export const WrapperRepos = styled.div`
-    width: 100%;
-    max-width: 900px;
-
-    margin: 40px 0;
-    padding: 10px;
-
-    border-radius: 7px;
-
-    background-color: var(--secondary);
+export const Title = styled.h1`
+    color: var(--text-info);
+    font-size: 20px;
 `;
-
-export const Repos = styled.div`
-    border: 3px solid var(--primary);
-    border-radius: 7px;
-
-    padding: 10px;
-    margin-bottom: 25px;
-
-    :last-child {
-        margin-bottom: 0;
-    }
-
-    > h1 {
-        color: var(--text-info);
-        font-size: 20px;
-    }
-
-    > p {
-        margin: 7px 0;
-    }
+export const Subtitle = styled.p`
+    margin: 17px 0;
 `;
 
 export const WrapperDetails = styled.div`

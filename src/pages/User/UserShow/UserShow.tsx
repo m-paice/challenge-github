@@ -2,17 +2,21 @@ import React from "react";
 
 import { useHistory } from "react-router-dom";
 
+// components
+import Card from "../../../components/Card";
+import Item from "../../../components/Item";
+import Avatar from "../../../components/Avatar";
+
 // styles
 import {
     Container,
     Nav,
     BackButton,
-    Avatar,
     WrapperActions,
     Actions,
     EmailText,
-    WrapperRepos,
-    Repos,
+    Title,
+    Subtitle,
     WrapperDetails,
     WrapperDetailsMobile,
     GroupDetails,
@@ -36,7 +40,7 @@ const UserShow: React.FC<Props> = (props) => {
                     <img src={ArrowLeftIcon} alt="arrow-left" />
                 </BackButton>
             </Nav>
-            <Avatar />
+            <Avatar className="lg" />
             <WrapperActions>
                 <Actions> 5 followers </Actions>
                 <Actions> 2 following </Actions>
@@ -44,10 +48,10 @@ const UserShow: React.FC<Props> = (props) => {
             </WrapperActions>
             <EmailText> aarongroves@gmail.com </EmailText>
 
-            <WrapperRepos>
-                <Repos>
-                    <h1> giocanvas </h1>
-                    <p> Forked from ajstarks/giocanvas </p>
+            <Card>
+                <Item>
+                    <Title> giocanvas </Title>
+                    <Subtitle> Forked from ajstarks/giocanvas </Subtitle>
                     <WrapperDetails>
                         <Details>
                             <img src={StarIcon} alt="star" /> 26
@@ -69,11 +73,11 @@ const UserShow: React.FC<Props> = (props) => {
                         </GroupDetails>
                         <Details> Updated on 22 Jun </Details>
                     </WrapperDetailsMobile>
-                </Repos>
+                </Item>
 
-                <Repos>
-                    <h1> giocanvas </h1>
-                    <p> Forked from ajstarks/giocanvas </p>
+                <Item>
+                    <Title> giocanvas </Title>
+                    <Subtitle> Forked from ajstarks/giocanvas </Subtitle>
                     <WrapperDetails>
                         <Details>
                             <img src={StarIcon} alt="star" /> 26
@@ -95,11 +99,11 @@ const UserShow: React.FC<Props> = (props) => {
                         </GroupDetails>
                         <Details> Updated on 22 Jun </Details>
                     </WrapperDetailsMobile>
-                </Repos>
+                </Item>
 
-                <Repos>
-                    <h1> giocanvas </h1>
-                    <p> Forked from ajstarks/giocanvas </p>
+                <Item>
+                    <Title> giocanvas </Title>
+                    <Subtitle> Forked from ajstarks/giocanvas </Subtitle>
                     <WrapperDetails>
                         <Details>
                             <img src={StarIcon} alt="star" /> 26
@@ -121,8 +125,8 @@ const UserShow: React.FC<Props> = (props) => {
                         </GroupDetails>
                         <Details> Updated on 22 Jun </Details>
                     </WrapperDetailsMobile>
-                </Repos>
-            </WrapperRepos>
+                </Item>
+            </Card>
         </Container>
     );
 };
