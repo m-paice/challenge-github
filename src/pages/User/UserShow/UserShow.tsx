@@ -22,11 +22,14 @@ import {
     GroupDetails,
     Details,
     ColorIcon,
+    WrapperForm,
+    WrapperSearch,
 } from "./style";
 
 // assets
 import ArrowLeftIcon from "../../../assets/arrow-left.svg";
 import StarIcon from "../../../assets/star.svg";
+import SearchIcon from "../../../assets/search.svg";
 
 interface Props {}
 
@@ -49,6 +52,17 @@ const UserShow: React.FC<Props> = (props) => {
             <EmailText> aarongroves@gmail.com </EmailText>
 
             <Card>
+                <WrapperForm>
+                    <WrapperSearch>
+                        <img src={SearchIcon} alt="search-icon" />
+                        <input placeholder="type a repo from user..." />
+                    </WrapperSearch>
+                    <select name="" id="">
+                        <option> All </option>
+                        <option> Source </option>
+                        <option> Forks </option>
+                    </select>
+                </WrapperForm>
                 <Item>
                     <Title> giocanvas </Title>
                     <Subtitle> Forked from ajstarks/giocanvas </Subtitle>

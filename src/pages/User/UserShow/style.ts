@@ -114,3 +114,64 @@ export const ColorIcon = styled.div`
 
     background-color: var(--text-danger);
 `;
+
+export const WrapperForm = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+    > select {
+        width: 200px;
+        /* height: 42px; */
+
+        margin-left: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 5px;
+
+        background-color: var(--secondary);
+
+        border-radius: 3px;
+        border: 1px solid;
+        border-color: var(--primary);
+
+        color: var(--gray);
+
+        cursor: pointer;
+
+        @media (max-width: 576px) {
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
+
+    @media (max-width: 576px) {
+        flex-direction: column;
+    }
+`;
+export const WrapperSearch = styled.div`
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > input {
+        width: 100%;
+
+        margin-left: 10px;
+
+        background: transparent;
+        border-bottom: 2px solid var(--primary);
+
+        font-size: 16px;
+
+        color: var(--text-secondary);
+    }
+`;
