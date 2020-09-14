@@ -8,7 +8,7 @@ interface Repo {
     description: string;
     stargazers_count: number;
     language: string;
-    updated_at: Date | string;
+    updated_at: Date;
 }
 
 interface ReposContextData {
@@ -44,6 +44,8 @@ export const ReposProvider: React.FC = ({ children }) => {
 
     // searching repos from user
     const handleSearchRepo = (reponame: string) => {
+        if (!reponame) return setTempRepos([]);
+
         const filterdRepos = repos.filter((repo) => repo.name.toLowerCase().includes(reponame.toLowerCase()));
 
         setTempRepos(filterdRepos);

@@ -73,7 +73,7 @@ export const Details = styled.div`
     align-items: center;
     justify-content: center;
 
-    margin: 0 15px;
+    margin-right: 15px;
 
     :first-child {
         margin-left: 0;
@@ -81,6 +81,11 @@ export const Details = styled.div`
 
     > img {
         margin-right: 5px;
+    }
+
+    &.sm {
+        color: var(--text-secondary);
+        font-size: 14px;
     }
 
     @media (max-width: 576px) {

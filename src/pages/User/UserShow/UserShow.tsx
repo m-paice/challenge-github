@@ -10,6 +10,9 @@ import Avatar from "../../../components/Avatar";
 // service
 import { useUsers, useRepos } from "../../../contexts";
 
+// utils
+import formatDate from "../../../utils/formatDate";
+
 // styles
 import {
     Container,
@@ -89,25 +92,34 @@ const UserShow: React.FC<Props> = (props) => {
                         <Title> {repo.name} </Title>
                         <Subtitle> {repo.description} </Subtitle>
                         <WrapperDetails>
-                            <Details>
-                                <img src={StarIcon} alt="star" /> {repo.stargazers_count}
-                            </Details>
-                            <Details>
-                                <ColorIcon /> {repo.language}
-                            </Details>
-                            <Details> {repo.updated_at} </Details>
+                            {repo.stargazers_count !== 0 && (
+                                <Details>
+                                    <img src={StarIcon} alt="star" /> {repo.stargazers_count}
+                                </Details>
+                            )}
+                            {repo.language && (
+                                <Details>
+                                    <ColorIcon /> {repo.language}
+                                </Details>
+                            )}
+                            <Details className="sm"> Updated at {formatDate(new Date(repo.updated_at))} </Details>
                         </WrapperDetails>
 
                         <WrapperDetailsMobile>
                             <GroupDetails>
-                                <Details>
-                                    <img src={StarIcon} alt="star" /> {repo.stargazers_count}
-                                </Details>
-                                <Details>
-                                    <ColorIcon /> {repo.language}
-                                </Details>
+                                {repo.stargazers_count !== 0 && (
+                                    <Details>
+                                        <img src={StarIcon} alt="star" /> {repo.stargazers_count}
+                                    </Details>
+                                )}
+
+                                {repo.language && (
+                                    <Details>
+                                        <ColorIcon /> {repo.language}
+                                    </Details>
+                                )}
                             </GroupDetails>
-                            <Details> {repo.updated_at} </Details>
+                            <Details className="sm"> Updated at {formatDate(new Date(repo.updated_at))} </Details>
                         </WrapperDetailsMobile>
                     </Item>
                 ))}
