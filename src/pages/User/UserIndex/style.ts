@@ -112,8 +112,19 @@ export const Title = styled.div`
     :hover {
         text-decoration: underline;
     }
+
+    @media (max-width: 576px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 `;
 
 export const Description = styled.div`
     margin: 20px 0;
+`;
+
+export const TextNoResult = styled.p`
+    text-align: center;
 `;

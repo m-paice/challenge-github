@@ -3,6 +3,9 @@ import React from "react";
 // pages
 import Routes from "./routes";
 
+// contexts
+import { ReposProvider, UsersProvider } from "./contexts";
+
 import GlobalStyles from "./styles/GlobalStyles";
 
 interface Props {}
@@ -10,9 +13,13 @@ interface Props {}
 const App: React.FC<Props> = (props) => {
     return (
         <>
-            <Routes />
+            <ReposProvider>
+                <UsersProvider>
+                    <Routes />
 
-            <GlobalStyles />
+                    <GlobalStyles />
+                </UsersProvider>
+            </ReposProvider>
         </>
     );
 };

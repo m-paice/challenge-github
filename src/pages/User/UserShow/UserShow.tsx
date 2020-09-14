@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 // components
 import Card from "../../../components/Card";
 import Item from "../../../components/Item";
 import Avatar from "../../../components/Avatar";
+
+// service
+import { useUsers, useRepos } from "../../../contexts";
 
 // styles
 import {
@@ -24,6 +27,7 @@ import {
     ColorIcon,
     WrapperForm,
     WrapperSearch,
+    TextNoResult,
 } from "./style";
 
 // assets
@@ -35,6 +39,23 @@ interface Props {}
 
 const UserShow: React.FC<Props> = (props) => {
     const history = useHistory();
+    const { id } = useParams();
+
+    const { handleGetUser, currentUser } = useUsers();
+    const { handleListRepos, repos, handleSortListRepos, handleSearchRepo, tempRepos } = useRepos();
+
+    useEffect(() => {
+        handleGetUser(id);
+        handleListRepos(id);
+    }, []);
+
+    const handleChangeSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        handleSortListRepos(event.target.value);
+    };
+
+    const handleChangeRepos = (event: React.ChangeEvent<HTMLInputElement>) => {
+        handleSearchRepo(event.target.value);
+    };
 
     return (
         <Container>
@@ -43,103 +64,55 @@ const UserShow: React.FC<Props> = (props) => {
                     <img src={ArrowLeftIcon} alt="arrow-left" />
                 </BackButton>
             </Nav>
-            <Avatar className="lg" />
+            <Avatar className="lg" path={currentUser.avatar_url} />
             <WrapperActions>
-                <Actions> 5 followers </Actions>
-                <Actions> 2 following </Actions>
+                <Actions> {currentUser.followers} followers </Actions>
+                <Actions> {currentUser.following} following </Actions>
                 <Actions> 20 stars </Actions>
             </WrapperActions>
-            <EmailText> aarongroves@gmail.com </EmailText>
+            <EmailText> {currentUser.email || currentUser.bio} </EmailText>
 
             <Card>
                 <WrapperForm>
                     <WrapperSearch>
                         <img src={SearchIcon} alt="search-icon" />
-                        <input placeholder="type a repo from user..." />
+                        <input placeholder="type a repo from user..." onChange={handleChangeRepos} />
                     </WrapperSearch>
-                    <select name="" id="">
-                        <option> All </option>
-                        <option> Source </option>
-                        <option> Forks </option>
+                    <select name="" id="" onChange={handleChangeSelect}>
+                        <option value="none">none</option>
+                        <option value="DESC"> decreasing </option>
+                        <option value="ASC"> growing </option>
                     </select>
                 </WrapperForm>
-                <Item>
-                    <Title> giocanvas </Title>
-                    <Subtitle> Forked from ajstarks/giocanvas </Subtitle>
-                    <WrapperDetails>
-                        <Details>
-                            <img src={StarIcon} alt="star" /> 26
-                        </Details>
-                        <Details>
-                            <ColorIcon /> Go
-                        </Details>
-                        <Details> Updated on 22 Jun </Details>
-                    </WrapperDetails>
+                {(tempRepos.length ? tempRepos : repos).map((repo) => (
+                    <Item key={repo.id}>
+                        <Title> {repo.name} </Title>
+                        <Subtitle> {repo.description} </Subtitle>
+                        <WrapperDetails>
+                            <Details>
+                                <img src={StarIcon} alt="star" /> {repo.stargazers_count}
+                            </Details>
+                            <Details>
+                                <ColorIcon /> {repo.language}
+                            </Details>
+                            <Details> {repo.updated_at} </Details>
+                        </WrapperDetails>
 
-                    <WrapperDetailsMobile>
-                        <GroupDetails>
-                            <Details>
-                                <img src={StarIcon} alt="star" /> 26
-                            </Details>
-                            <Details>
-                                <ColorIcon /> Go
-                            </Details>
-                        </GroupDetails>
-                        <Details> Updated on 22 Jun </Details>
-                    </WrapperDetailsMobile>
-                </Item>
+                        <WrapperDetailsMobile>
+                            <GroupDetails>
+                                <Details>
+                                    <img src={StarIcon} alt="star" /> {repo.stargazers_count}
+                                </Details>
+                                <Details>
+                                    <ColorIcon /> {repo.language}
+                                </Details>
+                            </GroupDetails>
+                            <Details> {repo.updated_at} </Details>
+                        </WrapperDetailsMobile>
+                    </Item>
+                ))}
 
-                <Item>
-                    <Title> giocanvas </Title>
-                    <Subtitle> Forked from ajstarks/giocanvas </Subtitle>
-                    <WrapperDetails>
-                        <Details>
-                            <img src={StarIcon} alt="star" /> 26
-                        </Details>
-                        <Details>
-                            <ColorIcon /> Go
-                        </Details>
-                        <Details> Updated on 22 Jun </Details>
-                    </WrapperDetails>
-
-                    <WrapperDetailsMobile>
-                        <GroupDetails>
-                            <Details>
-                                <img src={StarIcon} alt="star" /> 26
-                            </Details>
-                            <Details>
-                                <ColorIcon /> Go
-                            </Details>
-                        </GroupDetails>
-                        <Details> Updated on 22 Jun </Details>
-                    </WrapperDetailsMobile>
-                </Item>
-
-                <Item>
-                    <Title> giocanvas </Title>
-                    <Subtitle> Forked from ajstarks/giocanvas </Subtitle>
-                    <WrapperDetails>
-                        <Details>
-                            <img src={StarIcon} alt="star" /> 26
-                        </Details>
-                        <Details>
-                            <ColorIcon /> Go
-                        </Details>
-                        <Details> Updated on 22 Jun </Details>
-                    </WrapperDetails>
-
-                    <WrapperDetailsMobile>
-                        <GroupDetails>
-                            <Details>
-                                <img src={StarIcon} alt="star" /> 26
-                            </Details>
-                            <Details>
-                                <ColorIcon /> Go
-                            </Details>
-                        </GroupDetails>
-                        <Details> Updated on 22 Jun </Details>
-                    </WrapperDetailsMobile>
-                </Item>
+                {!repos.length && <TextNoResult>no results found</TextNoResult>}
             </Card>
         </Container>
     );

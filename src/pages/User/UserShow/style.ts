@@ -175,3 +175,7 @@ export const WrapperSearch = styled.div`
         color: var(--text-secondary);
     }
 `;
+
+export const TextNoResult = styled.p`
+    text-align: center;
+`;

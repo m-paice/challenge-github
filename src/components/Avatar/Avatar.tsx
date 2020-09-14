@@ -5,10 +5,11 @@ import { AvatarIcon } from "./style";
 
 interface Props {
     className: string;
+    path?: string;
 }
 
 const Avatar: React.FC<Props> = ({ ...rest }) => {
-    return <AvatarIcon {...rest}></AvatarIcon>;
+    return <AvatarIcon src={rest.path} {...rest}></AvatarIcon>;
 };
 
 export default Avatar;

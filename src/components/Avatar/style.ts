@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-export const AvatarIcon = styled.div`
+export const AvatarIcon = styled.img`
     flex-shrink: 0;
-
-    background-color: var(--secondary);
 
     border-radius: 50%;
 
@@ -15,8 +13,6 @@ export const AvatarIcon = styled.div`
     &.sm {
         width: 50px;
         height: 50px;
-
-        background-color: var(--primary);
 
         @media (max-width: 576px) {
             width: 70px;
