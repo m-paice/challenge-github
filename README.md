@@ -1,4 +1,4 @@
-# Project SigoFutebol
+# Project Challenge Github
 
 Base da aplicação (webpack, react, typescript, variáveis de ambiente).
 
@@ -30,11 +30,11 @@ cp .env.example .env
 yarn dev
 ```
 
-Acesse: `http://localhost:4000`
+Acesse: `http://localhost:4001`
 
 ## Authors
 
-Equipe SigoFutebol
+Equipe Challenge Github
 
 ## License
 
