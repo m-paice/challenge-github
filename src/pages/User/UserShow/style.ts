@@ -50,7 +50,11 @@ export const Actions = styled.div`
     text-align: center;
 `;
 
-export const EmailText = styled.div``;
+export const EmailText = styled.div`
+    max-width: 900px;
+
+    text-align: center;
+`;
 
 export const Title = styled.h1`
     color: var(--text-info);
