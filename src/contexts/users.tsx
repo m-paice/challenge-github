@@ -19,6 +19,7 @@ interface UsersContextData {
     handleListUsers(username: string): void;
     currentUser: User;
     handleGetUser(username: string): void;
+    loadingUser: boolean;
 }
 
 const UsersContext = createContext<UsersContextData>({} as UsersContextData);
@@ -26,6 +27,7 @@ const UsersContext = createContext<UsersContextData>({} as UsersContextData);
 export const UsersProvider: React.FC = ({ children }) => {
     const [users, setUsers] = useState<User[]>([]);
     const [currentUser, setCurrentUser] = useState<User>({} as User);
+    const [loadingUser, setLoadingUser] = useState(false);
 
     // list all users
     const handleListUsers = async (username: string) => {
@@ -36,9 +38,11 @@ export const UsersProvider: React.FC = ({ children }) => {
 
     // list a user
     const handleGetUser = async (username: string) => {
+        setLoadingUser(true);
         const response = await api.get(`/users/${username}`);
 
         setCurrentUser(response.data);
+        setLoadingUser(false);
     };
 
     return (
@@ -48,6 +52,7 @@ export const UsersProvider: React.FC = ({ children }) => {
                 handleListUsers,
                 currentUser,
                 handleGetUser,
+                loadingUser,
             }}
         >
             {children}

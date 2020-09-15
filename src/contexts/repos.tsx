@@ -19,6 +19,7 @@ interface ReposContextData {
     handleSortListRepos(order: string): void;
     handleSearchRepo(reponame: string): void;
     tempRepos: Repo[];
+    loadingRepos: boolean;
 }
 
 const ReposContext = createContext<ReposContextData>({} as ReposContextData);
@@ -27,12 +28,15 @@ export const ReposProvider: React.FC = ({ children }) => {
     const [repos, setRepos] = useState<Repo[]>([]);
     const [currentRepo, setCurrentRepo] = useState<Repo>({} as Repo);
     const [tempRepos, setTempRepos] = useState<Repo[]>([]); // for searching
+    const [loadingRepos, setLoadingRepos] = useState(false); // for searching
 
     // list all repos from user
     const handleListRepos = async (username: string) => {
+        setLoadingRepos(true);
         const response = await api.get(`/users/${username}/repos`);
 
         setRepos(response.data);
+        setLoadingRepos(false);
     };
 
     // list a repo from user
@@ -82,6 +86,7 @@ export const ReposProvider: React.FC = ({ children }) => {
                 handleSortListRepos,
                 handleSearchRepo,
                 tempRepos,
+                loadingRepos,
             }}
         >
             {children}

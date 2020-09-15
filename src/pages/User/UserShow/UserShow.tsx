@@ -6,6 +6,7 @@ import { useHistory, useParams } from "react-router-dom";
 import Card from "../../../components/Card";
 import Item from "../../../components/Item";
 import Avatar from "../../../components/Avatar";
+import Loading from "../../../components/Loading";
 
 // service
 import { useUsers, useRepos } from "../../../contexts";
@@ -44,8 +45,8 @@ const UserShow: React.FC<Props> = (props) => {
     const history = useHistory();
     const { id } = useParams();
 
-    const { handleGetUser, currentUser } = useUsers();
-    const { handleListRepos, repos, handleSortListRepos, handleSearchRepo, tempRepos } = useRepos();
+    const { handleGetUser, currentUser, loadingUser } = useUsers();
+    const { handleListRepos, repos, handleSortListRepos, handleSearchRepo, tempRepos, loadingRepos } = useRepos();
 
     useEffect(() => {
         handleGetUser(id);
@@ -59,6 +60,10 @@ const UserShow: React.FC<Props> = (props) => {
     const handleChangeRepos = (event: React.ChangeEvent<HTMLInputElement>) => {
         handleSearchRepo(event.target.value);
     };
+
+    if (loadingUser || loadingRepos) {
+        return <Loading />;
+    }
 
     return (
         <Container>
