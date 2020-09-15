@@ -16,7 +16,7 @@ const Home: React.FC<Props> = (props) => {
 
             <WrapperBox>
                 <Box onClick={() => history.push("/users")}> Go to user </Box>
-                <Box onClick={() => history.push("/repos")}> Go to repo </Box>
+                <Box> Go to repo </Box>
             </WrapperBox>
         </Container>
     );
