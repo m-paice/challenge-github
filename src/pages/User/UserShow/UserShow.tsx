@@ -31,6 +31,7 @@ import {
     ColorIcon,
     WrapperForm,
     WrapperSearch,
+    TextUrl,
     TextNoResult,
 } from "./style";
 
@@ -97,17 +98,24 @@ const UserShow: React.FC<Props> = (props) => {
                         <Title> {repo.name} </Title>
                         <Subtitle> {repo.description} </Subtitle>
                         <WrapperDetails>
-                            {repo.stargazers_count !== 0 && (
-                                <Details>
-                                    <img src={StarIcon} alt="star" /> {repo.stargazers_count}
-                                </Details>
-                            )}
-                            {repo.language && (
-                                <Details>
-                                    <ColorIcon /> {repo.language}
-                                </Details>
-                            )}
-                            <Details className="sm"> Updated at {formatDate(new Date(repo.updated_at))} </Details>
+                            <section>
+                                {repo.stargazers_count !== 0 && (
+                                    <Details>
+                                        <img src={StarIcon} alt="star" /> {repo.stargazers_count}
+                                    </Details>
+                                )}
+                                {repo.language && (
+                                    <Details>
+                                        <ColorIcon /> {repo.language}
+                                    </Details>
+                                )}
+                                <Details className="sm"> Updated at {formatDate(new Date(repo.updated_at))} </Details>
+                            </section>
+                            <TextUrl>
+                                <a href={repo.html_url} target="blank">
+                                    {repo.html_url}
+                                </a>
+                            </TextUrl>
                         </WrapperDetails>
 
                         <WrapperDetailsMobile>
@@ -125,6 +133,11 @@ const UserShow: React.FC<Props> = (props) => {
                                 )}
                             </GroupDetails>
                             <Details className="sm"> Updated at {formatDate(new Date(repo.updated_at))} </Details>
+                            <TextUrl>
+                                <a href={repo.html_url} target="blank">
+                                    {repo.html_url}
+                                </a>
+                            </TextUrl>
                         </WrapperDetailsMobile>
                     </Item>
                 ))}

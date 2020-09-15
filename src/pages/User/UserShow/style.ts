@@ -66,6 +66,11 @@ export const Subtitle = styled.p`
 
 export const WrapperDetails = styled.div`
     display: flex;
+    flex-direction: column;
+
+    > section {
+        display: flex;
+    }
 
     @media (max-width: 576px) {
         display: none;
@@ -187,4 +192,26 @@ export const WrapperSearch = styled.div`
 
 export const TextNoResult = styled.p`
     text-align: center;
+`;
+
+export const TextUrl = styled.div`
+    margin-top: 15px;
+
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    > a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        cursor: pointer;
+
+        transition: 0.2s;
+    }
+
+    > a:hover {
+        text-decoration: underline;
+        color: var(--text-info);
+    }
 `;
